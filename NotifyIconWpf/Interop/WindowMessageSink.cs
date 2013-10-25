@@ -216,6 +216,9 @@ namespace Hardcodet.Wpf.TaskbarNotification.Interop
       ProcessWindowMessage(messageId, wparam, lparam);
 
       // Pass the message to the default window procedure
+      //long result = WinApi.DefWindowProc(hwnd, messageId, wparam, lparam);
+      //result = messageId == WmNCCreate ? 1 : result;
+      //return result;
       return WinApi.DefWindowProc(hwnd, messageId, wparam, lparam);
     }
 
